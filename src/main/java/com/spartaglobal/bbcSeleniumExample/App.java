@@ -1,5 +1,6 @@
 package com.spartaglobal.bbcSeleniumExample;
 
+import com.spartaglobal.bbcSeleniumExample.BbcSite.BbcSite;
 import com.spartaglobal.bbcSeleniumExample.BbcSite.pages.BbcHomepage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,13 @@ public class App
     {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Adrian Odbierzychleb\\Downloads\\chromedriver.exe");
         ChromeDriver chromeDriver = new ChromeDriver();
+
+        BbcSite bbcSite = new BbcSite(chromeDriver);
+        bbcSite.bbcHomepage().goToBbcHomePage().clickSignInLink();
+        bbcSite.bbcSignInPage().inputUserName("test123").inputPassword("test12345").clickSubmitButton();
+
+
+
 
 //         chromeDriver.navigate().to("https://www.bbc.co.uk/");
 //        chromeDriver.findElementById("idcta-link").click();

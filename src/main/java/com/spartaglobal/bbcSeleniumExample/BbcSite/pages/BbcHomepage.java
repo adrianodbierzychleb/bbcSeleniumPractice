@@ -17,16 +17,19 @@ public class BbcHomepage {
     }
 
 
-    public void goToBbcHomePage(){
+    public BbcHomepage goToBbcHomePage(){
         driver.navigate().to(homepageURL);
+        return this;
     }
 
-    public void clickSignInLink(){
+    public BbcHomepage clickSignInLink(){
         driver.findElement(signInIdLink).click();
+        return this;
     }
 
-    public void closeDriver(){
+    public BbcHomepage closeDriver(){
         driver.close();
+        return this;
     }
 
 }
